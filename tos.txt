@@ -1,0 +1,60 @@
+#📒︱terms-of-service 
+8946DA Sidebar Color
+##
+Hooked.wtf - Terms of Service (TOS)
+BY USING OUR SERVICES, YOU AUTOMATICALLY AGREE TO THE TERMS AND CONDITIONS OUTLINED BELOW. FAILURE TO COMPLY MAY RESULT IN PERMANENT RESTRICTIONS AND LEGAL CONSEQUENCES.
+###
+Refund Policy:
+You are **explicitly NOT eligible for any refund** under the following conditions:  
+- More than **12 hours** have passed since your purchase. You must contact us immediately if the product fails to operate as intended.  
+- You have failed to follow the instructions provided by our team during usage.  
+- The product is functioning correctly.  
+- You have been **banned from Valorant** for any reason and attempt to request a refund.  
+
+**IMPORTANT:** Any attempt to bypass this policy and request a refund through **PayPal, Stripe, or any other payment processor** **without prior authorization from Hooked.wtf** constitutes **fraudulent activity**. Legal action may be pursued in such cases. Our refund policy is **strictly enforced** and non-negotiable.
+
+###
+Replacement Policy:
+- Users must contact us **immediately** if a purchased key fails to function. We will provide assistance to resolve operational issues.  
+- **Lost or misplaced keys are entirely the responsibility of the user.** Hooked.wtf is under no obligation to replace lost keys or provide any refund. Users are strongly advised to **store their keys securely in a location that cannot be accidentally deleted or lost**.  
+
+###
+Educational Intent:
+- Products offered by Hooked.wtf are provided **for educational purposes only**.  
+- Users are responsible for ensuring that their use of the product complies with applicable laws and any third-party terms of service.  
+- Hooked.wtf **does not control and is not responsible for** how users utilize the products after purchase.
+
+###
+Third-Party Services:
+- Hooked.wtf may provide access to or advertise third-party services.  
+- We are **not liable** for any interactions, outcomes, or consequences arising from engagement with third-party services.  
+- Users must review and comply with the terms, policies, and guidelines of any third-party platforms they interact with.
+
+###
+Prohibited Activities:
+Users are **strictly prohibited** from using Hooked.wtf services for any unlawful, malicious, or harassing purposes, including but not limited to:  
+- Hacking, phishing, or participating in any form of cybercrime.  
+- Harassment, intimidation, or malicious actions directed at individuals or organizations.  
+- Any activity that breaches local, national, or international law.  
+
+Violation of this section may result in **immediate and permanent termination** of access to Hooked.wtf services and potential legal consequences.
+
+###
+Limitation of Liability:
+- Hooked.wtf shall **not be held liable** for any direct, indirect, incidental, or consequential damages arising from the use of its services, including but not limited to:  
+  - Loss of profits  
+  - Loss of data  
+  - Loss of reputation or goodwill  
+- Users acknowledge and accept that use of Hooked.wtf services is **entirely at their own risk**, and liability is **strictly limited to the maximum extent permitted by law**.
+
+###
+Modifications to Terms:
+- Hooked.wtf reserves the right to modify, update, or amend these Terms of Service at any time without prior notice.  
+- Users will be notified of significant changes through their account interface or via email.  
+- Continued use of Hooked.wtf services following changes constitutes **full acceptance** of the revised Terms.
+
+###
+Legal Enforcement:
+- These Terms of Service are **legally binding**.  
+- Attempting to circumvent the refund policy, including requesting unauthorized refunds via **PayPal, Stripe, or any other payment processor**, is considered **fraudulent and actionable**.  
+- Users agree to resolve any disputes in accordance with these Terms and acknowledge that violations may result in **permanent account suspension and legal recourse**.
