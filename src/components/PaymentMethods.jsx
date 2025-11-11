@@ -2,162 +2,79 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const PaymentMethods = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const paymentMethods = [
-    {
-      name: 'Stripe',
-      logo: '/stripe.png',
-      color: 'from-indigo-500 via-purple-500 to-pink-500'
-    },
-    {
-      name: 'PayPal',
-      logo: '/paypal.png',
-      color: 'from-blue-500 via-blue-600 to-cyan-500'
-    },
-    {
-      name: 'Google Pay',
-      logo: '/google pay.png',
-      color: 'from-green-400 via-emerald-500 to-teal-500'
-    },
-    {
-      name: 'Apple Pay',
-      logo: '/apple pay.png',
-      color: 'from-gray-700 via-gray-800 to-black'
-    },
-    {
-      name: 'Visa',
-      logo: 'https://usa.visa.com/dam/VCOM/regional/ve/romania/blogs/hero-image/visa-logo-800x450.jpg',
-      color: 'from-blue-600 via-blue-700 to-indigo-800'
-    },
-    {
-      name: 'Mastercard',
-      logo: '/mastercard.png',
-      color: 'from-red-500 via-orange-500 to-yellow-500'
-    },
+    { name: 'Stripe', logo: '/stripe.png' },
+    { name: 'PayPal', logo: '/paypal.png' },
+    { name: 'Google Pay', logo: '/google pay.png' },
+    { name: 'Apple Pay', logo: '/apple pay.png' },
+    { name: 'Visa', logo: 'https://usa.visa.com/dam/VCOM/regional/ve/romania/blogs/hero-image/visa-logo-800x450.jpg' },
+    { name: 'Mastercard', logo: '/mastercard.png' },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % paymentMethods.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleCardClick = (index) => {
-    setCurrentIndex(index);
-  };
-
-  const getCardPosition = (index) => {
-    const totalCards = paymentMethods.length;
-    const angleStep = 360 / totalCards;
-    const offset = (index - currentIndex + totalCards) % totalCards;
-    const angle = offset * angleStep;
-    const radius = 300;
-    
-    const x = Math.sin((angle * Math.PI) / 180) * radius;
-    const z = Math.cos((angle * Math.PI) / 180) * radius;
-    const rotateY = -angle;
-    
-    const isCenter = offset === 0;
-    const scale = isCenter ? 1.15 : Math.max(0.7, 1 - Math.abs(z) / radius * 0.4);
-    const opacity = 1;
-    
-    return { x, z, rotateY, scale, opacity };
-  };
-
   return (
-    <section id="payments" className="py-32 px-6 bg-black relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-full blur-[200px]"></div>
-      </div>
+    <section id="payments" className="py-20 md:py-32 px-4 md:px-6 bg-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/5 to-black"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-24"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 tracking-tight">
             Payment Methods
           </h2>
-          <p className="text-2xl text-gray-400 font-light max-w-3xl mx-auto">
-            Secure, fast, and trusted worldwide
+          <p className="text-lg md:text-2xl text-gray-400 font-light">
+            Secure and trusted payment options
           </p>
         </motion.div>
 
-        <div className="flex justify-center items-center w-full">
-          <div className="relative h-80 w-full max-w-3xl flex items-center justify-center" style={{ perspective: '2000px' }}>
-            <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
-              {paymentMethods.map((method, index) => {
-                const { x, z, rotateY, scale, opacity } = getCardPosition(index);
-                const isCenter = (index - currentIndex + paymentMethods.length) % paymentMethods.length === 0;
-
-                return (
-                  <motion.div
-                    key={method.name}
-                    animate={{
-                      x,
-                      z,
-                      rotateY,
-                      scale,
-                      opacity,
-                    }}
-                    transition={{ 
-                      duration: 1.2, 
-                      ease: [0.22, 1, 0.36, 1],
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 15
-                    }}
-                    onClick={() => handleCardClick(index)}
-                    className="absolute cursor-pointer"
-                    style={{ 
-                      transformStyle: 'preserve-3d',
-                      zIndex: isCenter ? 50 : Math.round(opacity * 10)
-                    }}
-                  >
-                    <div className={`bg-gradient-to-br ${method.color} p-8 rounded-2xl shadow-xl border-2 ${isCenter ? 'border-white/40' : 'border-white/10'} w-[280px] h-[200px] flex flex-col items-center justify-center transition-all duration-600`}>
-                      <div className="text-white mb-4 transform transition-transform duration-300 hover:scale-110 bg-white rounded-xl p-4 w-full h-24 flex items-center justify-center shadow-inner">
-                        <img 
-                          src={method.logo} 
-                          alt={method.name}
-                          className="max-w-full max-h-full object-contain"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.nextSibling.style.display = 'block';
-                          }}
-                        />
-                        <div className="text-4xl font-bold text-gray-800" style={{ display: 'none' }}>
-                          {method.name}
-                        </div>
-                      </div>
-                      <h3 className="text-2xl font-bold text-white" style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}>
-                        {method.name}
-                      </h3>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center gap-3 mt-16">
-          {paymentMethods.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`transition-all duration-300 rounded-full ${
-                index === currentIndex 
-                  ? 'bg-white w-10 h-3' 
-                  : 'bg-white/30 hover:bg-white/50 w-3 h-3'
-              }`}
-            />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
+          {paymentMethods.map((method, index) => (
+            <motion.div
+              key={method.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              onHoverStart={() => setHoveredIndex(index)}
+              onHoverEnd={() => setHoveredIndex(null)}
+              className="group relative"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-purple-500/50 rounded-2xl p-6 md:p-8 transition-all duration-300 flex items-center justify-center h-32 md:h-40">
+                <img 
+                  src={method.logo} 
+                  alt={method.name}
+                  className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-xl md:text-2xl font-bold text-white" style={{ display: 'none' }}>
+                  {method.name}
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-16 md:mt-20 text-center"
+        >
+          <p className="text-gray-500 text-sm md:text-base">
+            All transactions are secured with industry-standard encryption
+          </p>
+        </motion.div>
       </div>
     </section>
   );

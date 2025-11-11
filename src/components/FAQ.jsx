@@ -7,19 +7,19 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Is the cheat safe?",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Our products are designed with security in mind."
+      answer: "Yes! All our products are completely undetected and built with advanced security features. We use state-of-the-art protection methods to ensure maximum safety during usage."
     },
     {
       question: "Can I get banned?",
-      answer: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. We cannot guarantee complete safety as all third-party tools carry inherent risks."
+      answer: "Our products are totally undetected and we take security extremely seriously. While we maintain a 0% ban rate, we always recommend using our products responsibly and following all guidelines provided."
     },
     {
       question: "Will I get fast support?",
-      answer: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Our support team is available 24/7 via Discord to assist you with any issues."
+      answer: "Absolutely! Our dedicated support team is available 24/7 on Discord to help you with any questions or issues. We pride ourselves on providing quick responses and solutions to ensure the best experience."
     },
     {
       question: "How can I activate our product?",
-      answer: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. After purchase, you'll receive a unique key that can be activated through our dashboard."
+      answer: "After purchase, you'll instantly receive a unique activation key via email. Simply run our loader, enter your key, and you're ready to go! Detailed setup instructions are provided with every purchase."
     }
   ];
 
